@@ -1,0 +1,30 @@
+sensor:
+  - platform: adc
+    name: light
+    pin: ${ldr_pin}
+    update_interval: 5s
+    attenuation: 12dB
+
+    on_value_range:
+      - below: 0.4
+        then:
+          - globals.set: 
+              id: brightness
+              value : "0"
+      - above: 0.4
+        below: 0.8
+        then:
+          - globals.set: 
+              id: brightness
+              value : "5"
+      - above: 0.8
+        below: 2.0
+        then:
+          - globals.set: 
+              id: brightness
+              value : "10"
+      - above: 2
+        then:
+          - globals.set: 
+              id: brightness
+              value : "15"

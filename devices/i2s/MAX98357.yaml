@@ -1,0 +1,14 @@
+i2s_audio:
+  - id: i2s_out
+    i2s_lrclk_pin: ${speaker_i2s_lrclk_pin}
+    i2s_bclk_pin: ${speaker_i2s_bclk_pin}
+
+speaker: 
+  - platform: i2s_audio
+    id: echo_speaker
+    dac_type: external
+    i2s_audio_id: i2s_out
+    i2s_dout_pin: ${speaker_i2s_dout_pin} 
+    channel: mono
+    sample_rate: 48000
+    buffer_duration: 200ms

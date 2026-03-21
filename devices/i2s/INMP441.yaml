@@ -1,0 +1,15 @@
+i2s_audio:
+  - id: i2s_in
+    i2s_lrclk_pin: ${mic_i2s_ws_pin}
+    i2s_bclk_pin: ${mic_i2s_sck_pin}
+
+microphone:
+  - platform: i2s_audio
+    adc_type: external
+    pdm: false
+    id: mickyphone
+    channel: left
+    bits_per_sample: 32bit
+    i2s_audio_id: i2s_in
+    i2s_din_pin: ${mic_i2s_din_pin}
+    correct_dc_offset: true

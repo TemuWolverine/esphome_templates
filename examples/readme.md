@@ -1,0 +1,1 @@
+These are example boards/sensors/etc that don't make sense to be included in a template as they require more code to use

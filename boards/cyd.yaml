@@ -1,0 +1,61 @@
+#Example CYD pins
+#  i2c_sda: "27"
+#  i2c_scl: "22"
+#
+#  tft_clk: "14"
+#  tft_mosi: "13"
+#  tft_miso: "12"
+#  tft_cs: "15"
+#  tft_dc: "2"
+#
+#  touch_clk: "25"
+#  touch_mosi: "32"
+#  touch_miso: "39"
+#  touch_cs: "33"
+#  touch_interupt: "36"
+
+i2c:
+  - sda: ${i2c_sda}
+    scl: ${i2c_scl}
+    scan: true
+
+spi:
+  - id: tft
+    clk_pin: ${tft_clk}
+    mosi_pin: ${tft_mosi}
+    miso_pin:
+      number: ${tft_miso}
+      ignore_strapping_warning: true
+  - id: touch
+    clk_pin: ${touch_clk}
+    mosi_pin: ${touch_mosi}
+    miso_pin: ${touch_miso}
+
+# Screen
+display:
+  - id: main_display
+    platform: ili9xxx
+    model: ili9342
+    rotation: ${rotation}
+    spi_id: tft
+    cs_pin: ${tft_cs}
+    dc_pin: ${tft_dc}
+    color_order: BGR
+    invert_colors: False
+    update_interval: never
+    auto_clear_enabled: false
+
+touchscreen:
+  - id: main_touchscreen
+    platform: xpt2046
+    spi_id: touch
+    cs_pin: ${touch_cs}
+    interrupt_pin: ${touch_interupt}
+    threshold: 400
+    calibration:
+      x_min: 280
+      x_max: 3860
+      y_min: 340
+      y_max: 3860
+    transform:
+      mirror_x: true
