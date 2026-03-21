@@ -1,0 +1,70 @@
+esp32:
+  variant: esp32p4
+  flash_size: 16MB
+  framework:
+    type: esp-idf
+    advanced:
+      enable_idf_experimental_features: true
+  cpu_frequency: 360MHz
+
+# 32 MB PSRAM — use high speed
+psram:
+  speed: 200MHz
+
+# Power rail required for the MIPI DSI PHY on ESP32-P4 boards
+esp_ldo:
+  - channel: 3
+    voltage: 2.5V
+
+# ESP32-P4 does not have wifi built in, ESP32-C6 is the network coprocessor
+esp32_hosted:
+  variant: ESP32C6
+  slot: 1
+  active_high: true
+  reset_pin: ${reset_pin}
+  cmd_pin: ${cmd_pin}
+  clk_pin: ${clk_pin}
+  d0_pin: ${d0_pin}
+  d1_pin: ${d1_pin}
+  d2_pin: ${d2_pin}
+  d3_pin: ${d3_pin}
+
+# Shared I2C bus
+i2c:
+  - sda: ${i2c_sda}
+    scl: ${i2c_scl}
+    scan: true
+    frequency: 400kHz
+  
+# MIPI DSI display
+display:
+  - platform: mipi_dsi
+    id: device_display
+    model: JC4880P443
+    byte_order: little_endian
+    rotation: ${rotation}
+    auto_clear_enabled: false
+    color_order: RGB
+
+
+# GT911 capacitive touch — I2C, no dedicated INT/RST pins on this board
+touchscreen:
+  - id: main_touchscreen
+    platform: gt911
+    display: device_display
+
+output:
+  - id: backlight_pwm
+    platform: ledc
+    pin: GPIO23
+
+light:
+  - id: backlight
+    platform: monochromatic
+    output: backlight_pwm
+    name: Display Backlight
+    restore_mode: ALWAYS_ON
+
+image:
+  defaults:
+    byte_order: little_endian
