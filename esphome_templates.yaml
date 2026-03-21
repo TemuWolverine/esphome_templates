@@ -1,6 +1,6 @@
 substitutions:
-  device_name: waterytart_cyd
-  friendly_name: WateryTart_CYD
+  device_name: esphome_device
+  friendly_name: ESPHomeTemplatedDevice
   min_version: 2025.11.0
 
   rotation: 90
