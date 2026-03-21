@@ -3,8 +3,10 @@ substitutions:
   friendly_name: ESPHomeTemplatedDevice
   min_version: 2025.11.0
 
+  # Common display rotation 
   rotation: 90
 
+  #CYD common pin labels
   i2c_sda: "27"
   i2c_scl: "22"
 
@@ -20,10 +22,12 @@ substitutions:
   touch_cs: "33"
   touch_interupt: "36"
 
+  #Common speaker pin labels
   #speaker_i2s_lrclk_pin: "26"
   #speaker_i2s_bclk_pin: "27"
   #speaker_i2s_dout_pin: "25"
-  #
+  
+  #Common mic pin labels
   #mic_i2s_ws_pin: "14"
   #mic_i2s_sck_pin: "13"
 
@@ -33,4 +37,13 @@ substitutions:
       ref: main
       files:
         - esphome-boilerplate.yaml
-        - boards/cyd.yaml
+
+        # Select a board
+        #- boards/cyd.yaml
+        #- boards/crowpanel_2_9_inch.yaml
+        #- boards/reterminal.yaml
+        #- boards/JC4880P443.yaml
+#
+        # Select any devices
+        #- devices/i2s/INMP441.yaml
+        #- devices/i2s/MAX98357.yaml
