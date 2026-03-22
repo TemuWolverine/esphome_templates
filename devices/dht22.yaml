@@ -1,0 +1,65 @@
+sensor:
+  - platform: dht
+    model: DHT22
+    pin: ${dht_pin}
+    temperature:
+      name: "Temperature"
+      id: dht_temperature
+      accuracy_decimals: 3
+
+      # If you don't smooth the temperature readings 
+      # the PID controller over reacts to small changes.
+      filters:
+         - exponential_moving_average:  
+             alpha: 0.1
+             send_every: 1
+
+# Example usage
+#       on_value_range:
+#        - above: 50.0
+#          then:
+#            if:
+#              condition:
+#                fan.is_off: rack_fan_toggle
+#              then:
+#              - logger.log: "Set fan level 100 over 50C"
+#              - output.set_level:
+#                  id: rack_fan_speed
+#                  level: 100%
+#        - above: 40.0
+#          then:
+#            if:
+#              condition:
+#                fan.is_off: rack_fan_toggle
+#              then:
+#              - logger.log: "Set fan level 66 over 40C"
+#              - output.set_level:
+#                  id: rack_fan_speed
+#                  level: 66%
+#        - above: 30.0
+#          then:
+#            if:
+#              condition:
+#                fan.is_off: rack_fan_toggle
+#              then:
+#              - logger.log: "Set fan level 33 over 30C"
+#              - output.set_level:
+#                  id: rack_fan_speed
+#                  level: 33%
+#        - below: 30.0
+#          then:
+#            if:
+#              condition:
+#                fan.is_off: rack_fan_toggle
+#              then:
+#              - logger.log: "Set fan level 0 under 30C"
+#              - output.set_level:
+#                  id: rack_fan_speed
+#                  level: 0%
+
+    humidity:
+      name: "Humidity"
+      id: dht_humidity
+                                                                                                                                                                                                          
+    update_interval: 5s
+
