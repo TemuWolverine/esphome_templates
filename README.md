@@ -96,7 +96,22 @@ substitutions:
       ref: main
       files:
         - esphome_boilerplate.yaml
-        - boards/cyd_with_default_pins
+        - boards/cyd_with_default_pins.yaml
 ```
 
 Then the CYD app code can be added.
+
+
+"Shorthand" package include works too, but quickly can get unreadable if you're importing a lot of sensors.
+
+```
+substitutions:
+  device_name: mycool_cyd
+  friendly_name: My Cool CYD Project
+  rotation: 90
+
+  packages:
+      boilerplate: github://TemuWolverine/esphome_templates/esphome_boilerplate.yaml
+      cyd: github://TemuWolverine/esphome_templates/boards/cyd_with_default_pins.yaml
+```
+
