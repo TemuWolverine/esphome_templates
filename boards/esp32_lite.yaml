@@ -1,0 +1,5 @@
+# ESP32 Lite, aka Wemos D32
+esp32:
+  variant: esp32
+  framework:
+    type: esp-idf
