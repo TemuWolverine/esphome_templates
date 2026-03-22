@@ -1,0 +1,10 @@
+spi:
+  clk_pin: ${clkPin}
+  mosi_pin: ${mosiPin}
+
+display:
+  - platform: max7219digit
+    id: led_display
+    cs_pin: ${csPin}
+    num_chips: 4
+    update_interval: 2s
