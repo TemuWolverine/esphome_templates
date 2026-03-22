@@ -5,7 +5,7 @@ i2s_audio:
 
 speaker: 
   - platform: i2s_audio
-    id: echo_speaker
+    id: i2s_speaker
     dac_type: external
     i2s_audio_id: i2s_out
     i2s_dout_pin: ${speaker_i2s_dout_pin} 

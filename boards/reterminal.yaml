@@ -40,40 +40,38 @@ sensor:
       - multiply: 2.0
 
 #    Example code from seedstudio.
-#  - platform: template
-#    name: "Battery Level"
-#    id: battery_level
-#    unit_of_measurement: "%"
-#    icon: "mdi:battery"
-#    device_class: battery
-#    state_class: measurement
-#    lambda: 'return id(battery_voltage).state;'
-#    update_interval: 600s
-#    filters:
-#      - calibrate_linear:
-#          - 4.15 -> 100.0
-#          - 3.96 -> 90.0
-#          - 3.91 -> 80.0
-#          - 3.85 -> 70.0
-#          - 3.80 -> 60.0
-#          - 3.75 -> 50.0
-#          - 3.68 -> 40.0
-#          - 3.58 -> 30.0
-#          - 3.49 -> 20.0
-#          - 3.41 -> 10.0
-#          - 3.30 -> 5.0
-#          - 3.27 -> 0.0
-#      - clamp:
-#          min_value: 0
-#          max_value: 100
+  - platform: template
+    name: "Battery Level"
+    id: battery_level
+    unit_of_measurement: "%"
+    icon: "mdi:battery"
+    device_class: battery
+    state_class: measurement
+    #lambda: 'return id(battery_voltage).state;'
+    update_interval: 600s
+    filters:
+      - calibrate_linear:
+          - 4.15 -> 100.0
+          - 3.96 -> 90.0
+          - 3.91 -> 80.0
+          - 3.85 -> 70.0
+          - 3.80 -> 60.0
+          - 3.75 -> 50.0
+          - 3.68 -> 40.0
+          - 3.58 -> 30.0
+          - 3.49 -> 20.0
+          - 3.41 -> 10.0
+          - 3.30 -> 5.0
+          - 3.27 -> 0.0
+      - clamp:
+          min_value: 0
+          max_value: 100
 
 # Refresh button
-#binary_sensor:
-#  - platform: gpio
-#    pin:
-#      number: GPIO3
-#      mode: INPUT_PULLUP
-#      inverted: true
-#    name: "Refresh Button"
-#    on_press:
-#      then:
+binary_sensor:
+  - platform: gpio
+    id: btnRefresh
+    pin:
+      number: GPIO3
+      mode: INPUT_PULLUP
+      inverted: true

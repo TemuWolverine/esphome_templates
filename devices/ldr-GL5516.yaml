@@ -1,0 +1,6 @@
+sensor:
+  - platform: adc
+    id: ldr_light
+    pin: ${ldr_pin}
+    update_interval: 5s
+    attenuation: 12dB

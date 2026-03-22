@@ -1,10 +1,5 @@
 sensor:
-  - platform: adc
-    name: light
-    pin: ${ldr_pin}
-    update_interval: 5s
-    attenuation: 12dB
-
+  - id: !extend ldr_light
     on_value_range:
       - below: 0.4
         then:
