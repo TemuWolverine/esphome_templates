@@ -1,3 +1,6 @@
+# Seeed Studio reTerminal E1001, black and white, 7.5" e-paper display, 
+# ESP32-S3-WROOM-1-N8R8, up to 240 MHz.
+# https://www.seeedstudio.com/reTerminal-E1001-p-6534.html
 esphome:
   on_boot:
     priority: 600

@@ -1,0 +1,6 @@
+#Lolin ESP32-S2-mini
+# https://www.wemos.cc/en/latest/s2/s2_mini.html
+esp32:
+  board: lolin_s2_mini
+  framework:
+    type: esp-idf

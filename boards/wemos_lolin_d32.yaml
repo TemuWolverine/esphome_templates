@@ -1,4 +1,5 @@
 # ESP32 Lite, aka Wemos D32
+# https://www.wemos.cc/en/latest/d32/d32.html
 esp32:
   variant: esp32
   framework:

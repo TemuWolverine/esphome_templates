@@ -1,3 +1,6 @@
+# Elecrow 2.9" Crowpanel display.
+# Features an ESP32-S3-WROOM-1-N8R8, up to 240 MHz, and a 2.9" e-paper display with 128x296 resolution.
+# https://www.elecrow.com/crowpanel-esp32-2-9-e-paper-hmi-display-with-128-296-resolution-black-white-color-driven-by-spi-interface.html
 esphome:
   on_boot:  #needed to turn on the screen power at boot
     - priority: 600
