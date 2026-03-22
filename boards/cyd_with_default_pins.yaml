@@ -1,14 +1,5 @@
-# ESPHome Templates
-Modular, reusable components to pull into various ESPHome projects  so I'm not writing the same damn code every time
-
-### Example usage
-
-```
 substitutions:
-  device_name: waterytart_cyd
-  friendly_name: WateryTart_CYD
-  rotation: 90
-
+  #CYD common pin labels
   i2c_sda: "27"
   i2c_scl: "22"
 
@@ -29,8 +20,4 @@ substitutions:
       url: https://github.com/TemuWolverine/esphome_templates
       ref: main
       files:
-        - esphome-boilerplate.yaml
         - boards/cyd.yaml
-```
-
-Then the CYD app code can be added.
