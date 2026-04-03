@@ -5,11 +5,9 @@
 
 
 esp32:
-  board: esp32-s3-devkitc1-n16r8
+  variant: ESP32S3
   framework:
     type: esp-idf
-  
 
-#psram:
-#  mode: quad 
-#  speed: 80MHz 
+psram:
+  mode: octal
