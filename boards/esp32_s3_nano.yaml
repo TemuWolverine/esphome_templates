@@ -1,0 +1,15 @@
+#ESP32-S3-Nano
+# ESP32-S3-N16R8, 2.4GHz WiFi, Bluetooth LE, USB-C, 28 GPIOs, castellated pins, and a built-in antenna + uFL antenna
+# don't add pullups to 45/46
+# https://www.aliexpress.com/item/1005008912610313.html
+
+
+esp32:
+  board: esp32-s3-devkitc1-n16r8
+  framework:
+    type: esp-idf
+  
+
+#psram:
+#  mode: quad 
+#  speed: 80MHz 
