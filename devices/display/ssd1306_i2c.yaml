@@ -1,0 +1,8 @@
+spi:
+  clk_pin: ${clkPin}
+  mosi_pin: ${mosiPin}
+
+display:
+  - platform: ssd1306_i2c
+    model: "SH1107 128x128"
+    id: oled_display
