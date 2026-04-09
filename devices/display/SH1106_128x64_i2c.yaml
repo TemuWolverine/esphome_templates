@@ -1,0 +1,7 @@
+display:
+  - platform: ssd1306_i2c
+    model: "SH1106 128x64"
+    rotation: ${rotation}
+    address: 0x3C
+    contrast: 70%
+    id: oled_display
