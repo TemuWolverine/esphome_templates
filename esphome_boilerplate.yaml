@@ -11,9 +11,9 @@ api:
 ota:
   - platform: esphome
 
-http_request:
-  useragent: esphome/${friendly_name}
-  timeout: 10s
+#http_request:
+#  useragent: esphome/${friendly_name}
+#  timeout: 10s
 
 wifi:
   ssid: !secret wifi_ssid
