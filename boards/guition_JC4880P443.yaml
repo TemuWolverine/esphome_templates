@@ -43,7 +43,6 @@ display:
     id: device_display
     model: JC4880P443
     byte_order: little_endian
-    rotation: ${rotation}
     auto_clear_enabled: false
     color_order: RGB
 
