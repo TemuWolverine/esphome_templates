@@ -14,49 +14,6 @@ sensor:
              alpha: 0.1
              send_every: 1
 
-# Example usage
-#       on_value_range:
-#        - above: 50.0
-#          then:
-#            if:
-#              condition:
-#                fan.is_off: rack_fan_toggle
-#              then:
-#              - logger.log: "Set fan level 100 over 50C"
-#              - output.set_level:
-#                  id: rack_fan_speed
-#                  level: 100%
-#        - above: 40.0
-#          then:
-#            if:
-#              condition:
-#                fan.is_off: rack_fan_toggle
-#              then:
-#              - logger.log: "Set fan level 66 over 40C"
-#              - output.set_level:
-#                  id: rack_fan_speed
-#                  level: 66%
-#        - above: 30.0
-#          then:
-#            if:
-#              condition:
-#                fan.is_off: rack_fan_toggle
-#              then:
-#              - logger.log: "Set fan level 33 over 30C"
-#              - output.set_level:
-#                  id: rack_fan_speed
-#                  level: 33%
-#        - below: 30.0
-#          then:
-#            if:
-#              condition:
-#                fan.is_off: rack_fan_toggle
-#              then:
-#              - logger.log: "Set fan level 0 under 30C"
-#              - output.set_level:
-#                  id: rack_fan_speed
-#                  level: 0%
-
     humidity:
       name: "Humidity"
       id: dht_humidity

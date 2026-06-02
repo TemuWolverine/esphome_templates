@@ -1,4 +1,3 @@
-
 ## VOICE ASSIST STUFF 
 select:
   - platform: template
@@ -28,7 +27,7 @@ select:
             - voice_assistant.stop:
             - delay: 500ms
             - micro_wake_word.start:
-
+              
 voice_assistant:
   id: va
   micro_wake_word:
@@ -36,7 +35,7 @@ voice_assistant:
     microphone: i2s_microphone
     channels: 0
     gain_factor: 4
-  media_player: ${mediaplayer}
+  media_player: echo_media_player
   noise_suppression_level: 2
   auto_gain: 31dBFS
   on_listening: 
