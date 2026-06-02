@@ -36,7 +36,11 @@ i2c:
     scl: ${i2c_scl}
     scan: true
     frequency: 400kHz
-  
+
+# Bug with the ESP32-P4's Wifi requires this to stop it from boot looping
+wifi:
+  fast_connect: true
+
 # MIPI DSI display
 display:
   - platform: mipi_dsi
