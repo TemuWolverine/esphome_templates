@@ -1,5 +1,5 @@
 esp32:
-  variant: esp32p4
+  board: esp32-p4-evboard
   flash_size: 16MB
   framework:
     type: esp-idf
@@ -9,6 +9,7 @@ esp32:
 
 # 32 MB PSRAM — use high speed
 psram:
+  mode: hex
   speed: 200MHz
 
 # Power rail required for the MIPI DSI PHY on ESP32-P4 boards
