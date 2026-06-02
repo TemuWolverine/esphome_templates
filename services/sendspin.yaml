@@ -1,0 +1,30 @@
+sendspin:
+
+#Setup I2S (DAC) for audio output
+i2s_audio:
+  - id: i2s_audio_bus
+    i2s_lrclk_pin: ${i2s_lrclk_pin}
+    i2s_bclk_pin: ${i2s_bclk_pin}
+
+#Configure speaker
+speaker:
+  - platform: i2s_audio
+    id: ${sendspin_speaker}
+    i2s_audio_id: i2s_audio_bus
+    i2s_dout_pin: ${i2s_dout}
+    dac_type: external
+    channel: stereo
+
+#Sendspin as the media source
+media_source:
+  - platform: sendspin
+    id: sendspin_media_source
+
+media_player:
+  - platform: speaker_source
+    id: external_media_player
+    name: Media Player
+    media_pipeline:
+      speaker: ${sendspin_speaker}
+      sources:
+        - sendspin_media_source
