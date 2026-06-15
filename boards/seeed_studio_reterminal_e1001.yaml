@@ -29,7 +29,6 @@ display:
     busy_pin:
       number: GPIO13
       inverted: true
-    rotation: 90
     update_interval: never
     
 sensor:
